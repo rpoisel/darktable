@@ -1199,7 +1199,6 @@ void gui_reset(struct dt_iop_module_t *self)
 {
   /* reset aspect preset to default */
   dt_conf_set_int("plugins/darkroom/clipping/aspect_preset", 1);
-
 }
 
 static void
@@ -1488,7 +1487,7 @@ void gui_init(struct dt_iop_module_t *self)
   dt_bauhaus_widget_set_label(g->crop_auto, _("automatic cropping"));
   dt_bauhaus_combobox_add(g->crop_auto, _("no"));
   dt_bauhaus_combobox_add(g->crop_auto, _("yes"));
-  g_object_set(G_OBJECT(g->crop_auto), "tooltip-text", _("do you want your image to be autically crop ?"), (char *)NULL);
+  g_object_set(G_OBJECT(g->crop_auto), "tooltip-text", _("automatically crop to avoid black edges"), (char *)NULL);
   g_signal_connect (G_OBJECT (g->crop_auto), "value-changed", G_CALLBACK (crop_auto_changed), self);
   gtk_box_pack_start(GTK_BOX(self->widget), g->crop_auto, TRUE, TRUE, 0);
   
