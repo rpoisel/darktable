@@ -1215,6 +1215,7 @@ keystone_type_changed (GtkWidget *combo, dt_iop_module_t *self)
      gtk_widget_set_sensitive(g->hvflip, TRUE);
      gtk_widget_set_sensitive(g->angle, TRUE);
      gtk_widget_set_sensitive(g->aspect_presets, TRUE);
+     g->k_show = 0;
      return; 
   }
   //we recreate the list to be sure that the "already applied" entry is not display
