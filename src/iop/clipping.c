@@ -1262,7 +1262,7 @@ static void keystone_type_populate(struct dt_iop_module_t *self,gboolean with_ap
   if (select > 10 && p->k_h == 0 && p->k_v == 0) sel = 4;
   else if (select > 10) sel = 5;
   else sel = select;
-  
+
   dt_bauhaus_combobox_set(g->keystone_type, sel);
   //we have to be sure that the event is called...
   keystone_type_changed(g->keystone_type, self);
@@ -2047,13 +2047,13 @@ void gui_post_expose(struct dt_iop_module_t *self, cairo_t *cr, int32_t width, i
     cairo_text_extents_t extents;
     cairo_select_font_face(cr, "sans-serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
     cairo_set_font_size(cr, 16);
-    cairo_text_extents (cr, "OK", &extents);
+    cairo_text_extents (cr, "ok", &extents);
     int c[2] = {(MIN(p3[0],p2[0])+MAX(p1[0],p4[0]))/2.0f, (MIN(p3[1],p4[1])+MAX(p1[1],p2[1]))/2.0f};
     cairo_set_source_rgba(cr, .5,.5,.5, .9);
     gui_draw_rounded_rectangle(cr,extents.width+8,extents.height+12,c[0]-extents.width/2.0f-4,c[1]-extents.height/2.0f-6);
     cairo_move_to(cr,c[0]-extents.width/2.0f,c[1]+extents.height/2.0f);
     cairo_set_source_rgba(cr, .2,.2,.2, .9);
-    cairo_show_text(cr, "OK");
+    cairo_show_text(cr, "ok");
     
     //draw the symetry buttons
     gboolean sym = FALSE;
